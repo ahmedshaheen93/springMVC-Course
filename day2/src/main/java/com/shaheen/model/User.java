@@ -1,13 +1,20 @@
 package com.shaheen.model;
 
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstName;
     private String lastName;
+    private String email;
+    private String password;
     private Double salary;
-    private List<User> friends;
 
     public User() {
 
@@ -63,14 +70,6 @@ public class User {
         this.salary = salary;
     }
 
-
-    public List<User> getFriends() {
-        return friends;
-    }
-
-    public void setFriends(List<User> friends) {
-        this.friends = friends;
-    }
 
     @Override
     public String toString() {

@@ -14,10 +14,10 @@ public class UserValidation implements Validator {
     @Override
     public void validate(Object object, Errors errors) {
         User user = (User) object;
-        if (user.getFirstName() == null || user.getFirstName().trim().equals("")) {
-            errors.rejectValue("firstName", "user.firstName", "can't be null or empty");
+        if (user.getSalary() == null || user.getSalary() < 2000) {
+            errors.rejectValue("salary", "error.user.salary", "salary must be greater than 2000");
         }
-        ValidationUtils.rejectIfEmpty(errors, "firstName", "can't be null or empty");
-
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "error.user.firstName");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "error.user.lastName");
     }
 }

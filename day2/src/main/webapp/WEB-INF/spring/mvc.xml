@@ -6,31 +6,56 @@
     <import resource="classpath:beans.xml"/>
     <bean id="userValidator" class="com.shaheen.utils.UserValidation"/>
 
-    <bean id="userController" class="com.shaheen.controller.UserController">
+    <bean id="registrationController" class="com.shaheen.controller.RegistrationController">
         <property name="formView" value="registration"/>
         <property name="userService" ref="userService"/>
-        <property name="successView" value="users"/>
+        <property name="successView" value="redirect:/users.htm"/>
         <property name="validator" ref="userValidator"/>
+    </bean>
+    <bean id="usersController" class="com.shaheen.controller.UsersController">
+        <property name="userService" ref="userService"/>
+    </bean>
+    <bean id="userReportController" class="com.shaheen.controller.UserReportController">
+        <property name="userService" ref="userService"/>
     </bean>
 
 
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="/registration.htm">userController</prop>
+                <prop key="/registration.htm">registrationController</prop>
+                <prop key="/users.htm">usersController</prop>
+                <prop key="/userReport.htm">userReportController</prop>
             </props>
         </property>
     </bean>
-    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-        <property name="exceptionMappings">
-            <props>
-                <prop key="java.lang.Exception">errorView</prop>
-            </props>
-        </property>
-    </bean>
+    <!--    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+    <!--        <property name="exceptionMappings">-->
+    <!--            <props>-->
+    <!--                <prop key="java.lang.Exception">errorView</prop>-->
+    <!--            </props>-->
+    <!--        </property>-->
+    <!--    </bean>-->
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
+        <property name="order" value="2"/>
+    </bean>
+
+    <!-- Access resource bundles with the specified basename -->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <!--        <property name="basename" value="view"/>-->
+        <property name="basenames">
+            <list>
+                <value>messages</value>
+                <value>errors</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="viewResolver2" class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location" value="/WEB-INF/spring/views.xml"/>
+        <property name="order" value="1"/>
     </bean>
 </beans>

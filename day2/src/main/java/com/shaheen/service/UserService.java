@@ -2,8 +2,11 @@ package com.shaheen.service;
 
 import com.shaheen.model.User;
 
+import java.util.List;
+
 public interface UserService {
-    User getByEmailAndPassword(String email, String password);
+    
+    List<User> findAll();
 
     User save(User user);
 }

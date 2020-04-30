@@ -6,12 +6,12 @@ import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
-public class UserController extends SimpleFormController {
+public class RegistrationController extends SimpleFormController {
 
     private UserService userService;
 
 
-    public UserController() {
+    public RegistrationController() {
         setCommandClass(User.class);
         setCommandName("user");
     }
