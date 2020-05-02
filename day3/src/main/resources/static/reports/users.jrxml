@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20" uuid="35028fba-ff33-4bc1-b225-5fde6d28dbae">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+
+    <field name="firstName" class="java.lang.String">
+        <property name="net.sf.jasperreports.javabean.field.property" value="firstName"/>
+
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="lastName" class="java.lang.String">
+        <property name="net.sf.jasperreports.javabean.field.property" value="lastName"/>
+
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+
+    <field name="salary" class="java.lang.Double">
+        <property name="net.sf.jasperreports.javabean.field.property" value="salary"/>
+
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band height="802" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="802" uuid="28e4043a-738d-488f-adc5-b0c34e5b9c6d"/>
+                <box>
+                    <pen lineWidth="6.0" lineStyle="Double"/>
+                    <topPen lineWidth="6.0" lineStyle="Double"/>
+                    <leftPen lineWidth="6.0" lineStyle="Double"/>
+                    <bottomPen lineWidth="6.0" lineStyle="Double"/>
+                    <rightPen lineWidth="6.0" lineStyle="Double"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+        </band>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch">
+            <staticText>
+                <reportElement x="180" y="16" width="194" height="34" uuid="d2336a2d-dbb0-4f62-b406-19bd7624aba0"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="24" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Users Report]]></text>
+            </staticText>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="20" y="16" width="100" height="20" uuid="c5420803-51e3-4354-8dd7-4a5ed2724286"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <textField pattern="HH.mm">
+                <reportElement x="20" y="36" width="100" height="20" uuid="1b517e96-8bc4-4a46-b17d-9ffaca2baa84"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="24" splitType="Stretch">
+            <staticText>
+                <reportElement mode="Opaque" x="38" y="0" width="160" height="20" backcolor="#CCCCCC"
+                               uuid="24b3c104-8d32-4bf6-87b0-b6cc6643704f"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[firstName]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="198" y="0" width="160" height="20" backcolor="#CCCCCC"
+                               uuid="16427454-50fc-4aba-a27e-0797314e4be7"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[lastName]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="358" y="0" width="160" height="20" backcolor="#CCCCCC"
+                               uuid="6c322b53-1680-4f8f-9164-70f74e74045c"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[salary]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="23" splitType="Stretch">
+            <textField>
+                <reportElement x="38" y="0" width="160" height="20" uuid="ae3b8128-0e50-49de-8722-e58c6c6a5dd0"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{firstName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="198" y="0" width="160" height="20" uuid="fd98b5ee-75d2-4e25-9283-931ca3327d96"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{lastName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="358" y="0" width="160" height="20" uuid="a218f069-bc31-4291-b71a-b8b82cb98242"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{salary}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch">
+            <textField>
+                <reportElement x="20" y="34" width="80" height="20" uuid="3d27c3c7-a275-4c07-bb22-039ee6576add"/>
+                <textElement textAlignment="Right"/>
+                <textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement x="100" y="34" width="40" height="20" uuid="eedff8d0-d466-47ae-96b8-48ad9bf2072f"/>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>
