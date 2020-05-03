@@ -71,7 +71,7 @@ public class UsersController {
         }
     }
 
-    @GetMapping("/printUserReport.htm")
+    @GetMapping("/pdfUserReport.htm")
     public ResponseEntity<byte[]> printUserReport(HttpServletResponse response) {
         JasperPrint jasperPrint = userService.ReportAllUsers();
         System.out.println(jasperPrint);
@@ -80,7 +80,7 @@ public class UsersController {
 
     }
 
-    @GetMapping("excelFile.htm")
+    @GetMapping("excelUserReport.htm")
     public ResponseEntity<byte[]> excelUserReport(HttpServletResponse response) {
         JasperPrint jasperPrint = userService.ReportAllUsers();
         System.out.println(jasperPrint);

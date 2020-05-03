@@ -9,8 +9,10 @@
 </head>
 <body class="container">
 <a href="${pageContext.request.contextPath}/users/userReport.htm" target="_blank" class="btn btn-primary">print</a>
-<a href="${pageContext.request.contextPath}/users/printUserReport.htm" target="_blank"
+<a href="${pageContext.request.contextPath}/users/pdfUserReport.htm" target="_blank"
    class="btn btn-primary">download</a>
+<a href="${pageContext.request.contextPath}/users/excelUserReport.htm" target="_blank"
+   class="btn btn-primary">download excel</a>
 <table class="table">
     <thead class="table table-dark">
     <tr>
