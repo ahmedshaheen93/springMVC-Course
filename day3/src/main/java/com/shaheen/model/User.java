@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -15,19 +15,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotNull(message = "error.user.firstName")
-    @NotEmpty(message = "error.user.firstName")
-    @Length(min = 3, max = 30, message = "error.user.firstName")
+    @NotBlank
+    @Length(min = 3, max = 30)
     private String firstName;
-    @NotNull(message = "error.user.firstName")
-    @NotEmpty(message = "error.user.firstName")
-    @Length(min = 3, max = 30, message = "error.user.firstName")
+    @NotBlank
+    @Length(min = 3, max = 30)
     private String lastName;
+
     private String email;
     private String password;
 
-    @NotNull(message = "error.user.salary")
-    @Min(value = 2000, message = "error.user.salary")
+    @NotNull(message = "{erorr.user.salary}")
+    @Min(value = 2000)
     private Double salary;
 
     public User() {
