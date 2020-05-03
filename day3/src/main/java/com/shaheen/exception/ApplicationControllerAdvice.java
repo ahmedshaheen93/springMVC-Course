@@ -27,7 +27,7 @@ public class ApplicationControllerAdvice {
         dataBinder.registerCustomEditor(Number.class, new PropertyEditorSupport() {
             @Override
             public void setAsText(String str) {
-                Boolean check = str.matches("\\d+\\.?(\\d+)?");
+                boolean check = str.matches("\\d+\\.?(\\d+)?");
                 if (str.equals("") || !check)
                     setValue(0);
                 else

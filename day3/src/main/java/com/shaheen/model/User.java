@@ -9,9 +9,11 @@ import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Entity
-public class User {
+public class User implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,7 +27,7 @@ public class User {
     private String email;
     private String password;
 
-    @NotNull(message = "{erorr.user.salary}")
+    @NotNull()
     @Min(value = 2000)
     private Double salary;
 
