@@ -24,12 +24,12 @@ public class ApplicationControllerAdvice {
     public void initBinder(WebDataBinder dataBinder) {
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
-        dataBinder.registerCustomEditor(Double.class, new PropertyEditorSupport() {
+        dataBinder.registerCustomEditor(Number.class, new PropertyEditorSupport() {
             @Override
             public void setAsText(String str) {
-                Boolean check = str.matches("\\d+\\.?(\\d+)?");
+                boolean check = str.matches("\\d+\\.?(\\d+)?");
                 if (str.equals("") || !check)
-                    setValue(0.0d);
+                    setValue(0);
                 else
                     setValue(Double.parseDouble(str));
             }
